@@ -3,30 +3,29 @@
  * @brief 
  * @author dqflying (dqflying@gmail.com)
  * @version 1.0
- * @date 2020-05-11
+ * @date 2020-05-29
  * 
  * @copyright Copyright (c) 2020  DQFLYING.INC
  * 
  * @par 新增文件:
- * <table>
- * <tr><th>Date            <th>Version      <th>Author       <th>Description
- * <tr><td>2020-05-11      <td>1.0          <td>dqflying     <td>内容
- * </table>
+ * 
+ * 
+ * Date              Version        Author         LISENCE
+ * 2020-05-29        1.0            dqflying       XXXXXXX
+ * Description:
+ * 
+ * 
  */
 
-#include <iostream>
-#include <set>
-#include <string>
-#include <unordered_map>
-#include <vector>
-using namespace std;
+#include<iostream>
+#include<string>
 
-
-int main(int argc, char **argv)
+struct Sales_data {
+    std::string bookNo;
+    unsigned int units_sold = 0;
+    double revenue = 0.0;
+};
+int main()
 {
-    int *p = nullptr;
-    int *p1 = 0;
-    int *p2 = NULL;
-    //int &r3 = 50;
     return 0;
 }
