@@ -18,11 +18,13 @@
  */
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
 int main(int argc, char **argv)
 {
+    //初始化
     string s1 = "abcdefg";
     string s2 = s1;
     string s3("hijklmn");
@@ -30,6 +32,23 @@ int main(int argc, char **argv)
     string s5(10, 'j');
     string s6 = string("abc");
     string s7 = string(10, 'k');
+
+    //getline 函数
+    string input;
+    while(getline(cin, input))
+    {
+        if(input.size())
+        {
+            cout << input << endl;
+        }
+        
+    }
+
+
+    //io
+    string s8, s9;
+    cin >> s8 >> s9;
+    cout << s8 << s9 << endl;
 
     return 0;
 }
