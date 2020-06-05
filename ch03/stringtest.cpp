@@ -24,6 +24,13 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
+
+    std::string forstr("abcdefg");
+    for(auto letter: forstr)
+    {
+        std::cout << letter << std::endl;
+    }
+
     //初始化
     string s1 = "abcdefg";
     string s2 = s1;
