@@ -25,11 +25,13 @@ using namespace std;
 int main(int argc, char **argv)
 {
 
-    std::string forstr("abcdefg");
-    for(auto letter: forstr)
+    std::string forstr("Hello world!!!");
+    for(auto &letter: forstr)
     {
-        std::cout << letter << std::endl;
+        letter = toupper(letter);
+        
     }
+    std::cout << forstr << std::endl;
 
     //初始化
     string s1 = "abcdefg";
