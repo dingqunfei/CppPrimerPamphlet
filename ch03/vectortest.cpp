@@ -26,5 +26,12 @@ int main(int argc, char **argv)
     std::vector<std::string> strVec(10);
     std::vector<int> intVec(10);
 
+    std::string line;
+    std::vector<std::string> strVec1;
+    while(getline(std::cin, line))
+    {
+        strVec1.push_back(line);
+    }
+
     return 0;
 }
