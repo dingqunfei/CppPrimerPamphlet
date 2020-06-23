@@ -19,6 +19,7 @@
  */
 
 #include <iostream>
+#include <iterator>
 
 int main(int argc, char **argv)
 {
@@ -29,6 +30,19 @@ int main(int argc, char **argv)
     {
         /* code */
         arr[i] = i;
+    }
+    
+    int *ptrofend = &arr[len];
+
+    int distance = ptrofend - arr;
+
+    int *arrbeg = std::begin(arr);
+    int *arrend = std::end(arr);
+
+    if (arrbeg == arr && arrend == ptrofend)
+    {
+        /* code */
+        std::cout << "Get iterator SECCED" << std::endl;
     }
     
 
