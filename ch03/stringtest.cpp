@@ -20,6 +20,8 @@
 #include <string>
 #include <iostream>
 #include <cstring>
+#include <iterator>
+#include <vector>
 
 using namespace std;
 
@@ -27,6 +29,8 @@ int main(int argc, char **argv)
 {
     char cstr[] = {'a', 'b', 'c', 'd', '\0'};
     std::cout << strlen(cstr) << std::endl;
+
+    std::vector<char> chVec(std::begin(cstr), std::end(cstr));
 
     std::string forstr("Hello world!!!");
     for(auto &letter: forstr)
