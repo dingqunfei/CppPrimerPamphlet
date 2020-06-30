@@ -23,14 +23,15 @@
 
 int main(int argc, char **argv)
 {
-    std::vector<int> intVec{1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+    std::vector<int> v{1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
 
-    int intArr[10];
+    int arr[10];
+    for (int i = 0; i != v.size(); ++i) arr[i] = v[i];
 
-    for (size_t i = 0; i < count; i++)
-    {
-        /* code */
-    }
+    for (auto i : arr) std::cout << i << " ";
+    std::cout << std::endl;
+
+    return 0;
     
     
     
