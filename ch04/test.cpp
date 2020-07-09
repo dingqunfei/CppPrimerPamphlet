@@ -33,5 +33,14 @@ int main(int argc, char **argv)
     int *pi;
     pi = 0;
 
+    int x[10];   int *p = x;
+    std::cout << sizeof(x)/sizeof(*x) << std::endl;
+    std::cout << sizeof(p)/sizeof(*p) << std::endl;
+
+
+    double d;
+    void *ptr = &d;
+    double *dp = static_cast<double *>(ptr);
+
     return 0;
 }
