@@ -27,7 +27,7 @@ class Sales_data{
     std::string isbn() const { return BookNo; }
     Sales_data &combine(const Sales_data &item);
 
-    private:
+    
     std::string BookNo;
     unsigned int sold_unit;
     double revenue;
