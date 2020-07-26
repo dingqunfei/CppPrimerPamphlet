@@ -22,23 +22,44 @@
  */
 
 
+
 #include <string>
+#include <iostream>
 
-class Person{
+class Sales_data{
+    public:
+    std::string isbn() const { return BookNo; }
+    Sales_data &combine(const Sales_data &item);
 
-public:
-    std::string get_name() const
-    {
-        return Name;
-    }
-    std::string get_address() const
-    {
-        return Address;
-    }
-
-
-private:
-    std::string Name;
-    std::string Address;
-
+    
+    std::string BookNo;
+    unsigned int sold_unit;
+    double revenue;
 };
+
+Sales_data & Sales_data::combine(const Sales_data &item)
+{
+    sold_unit += item.sold_unit;
+    revenue += item.revenue;
+    return *this;
+}
+
+std::ostream &print(std::ostream &out, const Sales_data &item)
+{
+    out << item.BookNo << " " << item.sold_unit << " " << item.revenue;
+    return out;
+}
+
+std::istream &read(std::istream &in, Sales_data &item)
+{
+    in >> item.BookNo >> item.sold_unit >> item.revenue;
+    return in;
+}
+
+Sales_data add(Sales_data &lhs, Sales_data &rhs)
+{
+    Sales_data sum = lhs;
+    sum.combine(rhs);
+    return sum;
+    
+}
