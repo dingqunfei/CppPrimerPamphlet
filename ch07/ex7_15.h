@@ -25,11 +25,26 @@
 #include <string>
 #include <iostream>
 
+class Person;
+
+std::istream &read(std::istream &in, Person &one);
+std::ostream &print(std::ostream &out, const Person &one);
+
+
 class Person{
 
-public:
+friend std::istream &read(std::istream &in, Person &one);
+friend std::ostream &print(std::ostream &out, const Person &one);
+
+private:
     std::string Name;
     std::string Address;
+
+public:
+    Person() = default;
+    Person(std::string name):Name(name), Address("") {}
+    Person(std::string name, std::string address): Name(name), Address(address) {}
+    Person(std::istream &in) { read(in, *this); }
 
     std::string get_name() const
     {
