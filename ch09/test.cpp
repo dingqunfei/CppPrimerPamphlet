@@ -29,5 +29,12 @@ int main(int argc, char **argv)
     std::string str = "abc";
     char *ch = "abc";
 
+    for (std::size_t i = 0; i < 10; i++)
+    {
+        /* code */
+        str.push_back('q');
+    }
+    
+
     return 0;
 }
