@@ -36,7 +36,11 @@ int main(int argc, char **argv)
 
     std::vector<std::string> strVec = {"abc", "defg", "hijk", "lmn", "opq", "rst"};
 
+    //error, "||||" const char*
+    //std::string sumStr = std::accumulate(strVec.cbegin(), strVec.cend(), "||||");
     std::string sumStr = std::accumulate(strVec.cbegin(), strVec.cend(), std::string("||||"));
 
-    return 0;
+    std::fill(intVec.begin(), intVec.end(), 0);
+
+    return 0;  
 }
