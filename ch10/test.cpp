@@ -25,6 +25,7 @@
 #include <iostream>
 #include <numeric>
 #include <algorithm>
+#include <iterator>
 
 int main(int argc, char **argv)
 {
@@ -41,6 +42,17 @@ int main(int argc, char **argv)
     std::string sumStr = std::accumulate(strVec.cbegin(), strVec.cend(), std::string("||||"));
 
     std::fill(intVec.begin(), intVec.end(), 0);
+
+    std::vector<int> vec;
+    //error, std::fill_n(vec.begin(), 10, 0);
+    std::fill_n(back_inserter(vec), 10, 0);
+    std::replace(vec.begin(), vec.end(), 0, 11);
+
+    std::vector<std::string> strNameVec{"qiu", "hong", "xiu", "ding", "qun", "fei"};
+    std::stable_sort(strNameVec.begin(), strNameVec.end(), [](const std::string &a, const std::string &b) { return a > b;});
+
+    auto f = [](const int a, const int b){ return a + b;};
+    auto result = f(3, 4);
 
     return 0;  
 }
