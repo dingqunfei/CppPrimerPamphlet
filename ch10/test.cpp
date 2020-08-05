@@ -26,6 +26,16 @@
 #include <numeric>
 #include <algorithm>
 #include <iterator>
+#include <functional>
+
+using namespace std::placeholders;
+//using std::placeholders::_1;
+
+
+bool check_size(const std::string &s, std::string::size_type sz)
+{
+    return s.size() >= sz;
+}
 
 int main(int argc, char **argv)
 {
@@ -53,6 +63,8 @@ int main(int argc, char **argv)
 
     auto f = [](const int a, const int b){ return a + b;};
     auto result = f(3, 4);
+
+    auto newFunction = std::bind(check_size, _1, 5);
 
     return 0;  
 }
