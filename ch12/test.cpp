@@ -27,7 +27,21 @@
 
 int main(int argc, char **argv)
 {
-    std::shared_ptr<std::string> sh_ptr;
+    std::shared_ptr<std::string> sh_ptr_str;
+    std::shared_ptr<std::vector<std::string>> sh_ptr_vec;
 
+    if (sh_ptr_str && sh_ptr_str->empty())
+    {
+        /* code */
+        *sh_ptr_str = "hx";
+    }
+    
+    auto smart_ptr = std::make_shared<std::string>("dingqunfei");
+    auto smart_ptr1 = std::make_shared<std::vector<std::string>>();
+
+
+    auto p = std::make_shared<int>(42);
+    auto p1(p);
+    int cnt = p.use_count();
     return 0;
 }
