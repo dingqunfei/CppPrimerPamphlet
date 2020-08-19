@@ -27,7 +27,7 @@
 
 int main(int argc, char **argv)
 {
-    
+    std::shared_ptr<std::string> sh_ptr;
 
     return 0;
 }
