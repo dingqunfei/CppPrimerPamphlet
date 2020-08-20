@@ -43,5 +43,6 @@ int main(int argc, char **argv)
     auto p = std::make_shared<int>(42);
     auto p1(p);
     int cnt = p.use_count();
+    
     return 0;
 }
