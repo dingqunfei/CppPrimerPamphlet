@@ -41,6 +41,9 @@ public:
     std::string &back();
     std::string &front();
 
+    const std::string &back() const;
+    const std::string &front() const;
+
 private:
 
     std::shared_ptr<std::vector<std::string>> data;

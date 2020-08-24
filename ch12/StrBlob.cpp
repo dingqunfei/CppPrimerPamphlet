@@ -58,3 +58,18 @@ std::string &StrBlob::back()
     return data->back();
 }
 
+const std::string &StrBlob::front() const
+{
+    return front();
+}
+
+const std::string &StrBlob::back() const
+{
+    return back();
+}
+
+void StrBlob::pop_back()
+{
+    check(0, "pop back on empty StrBlob!");
+    data->pop_back();
+}
