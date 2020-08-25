@@ -24,6 +24,7 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include <new>
 
 int main(int argc, char **argv)
 {
@@ -46,5 +47,11 @@ int main(int argc, char **argv)
 
 
     int *pi = new int(100);
+    int *pi1 = new int(0);
+    int *pi2 = new (std::nothrow) int(1);
+    int *pi3 = new (std::nothrow) int[100];
+
+    delete pi3;
+
     return 0;
 }
