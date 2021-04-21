@@ -1,24 +1,33 @@
 
-/**
- * @brief 
- */
+#include <iostream>
+#include <vector>
 
-#include <mutex>
-#include <list>
-#include <thread>
-#include <algorithm>
+using namespace std;
 
-std::mutex some_mutex;
-std::list<int> some_list;
-
-void add_to_list(int new_value)
-{
-    std::lock_guard<std::mutex> gurad(some_mutex);
-    some_list.push_back(new_value);
-}
-
-bool list_contains(int value_to_find)
-{
-    std::lock_guard<std::mutex> guard(some_mutex);
-    return std::find(some_list.begin(), some_list.end(), value_to_find) != some_list.end();
+int main()
+{       
+        vector<int> nums = {1, 2, 3, 1};
+        int size = nums.size();
+        if(size == 1)
+        {
+            return 0;
+        }
+        
+        for(int i = 0; i < size; ++i)
+        {
+            if(i == 0 && nums[0] > nums[1])
+            {
+                return 0;
+            }
+            else if(i == size-1 && nums[i] > nums[i-1])
+            {
+                return i;
+            }
+            if(nums[i] > nums[i-1] && nums[i] > nums[i+1])
+            {
+                return i;
+            }
+        }
+        return -1;
+    
 }
