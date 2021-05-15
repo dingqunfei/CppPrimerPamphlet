@@ -1,33 +1,55 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
+#include <stack>
+#include <unordered_map>
 
 using namespace std;
 
+long f(long x)
+{
+    long count = 0;
+    while(x >= 5)
+    {
+        count += x/5;
+        x = x/5;
+    }
+    return count;
+}
+
 int main()
-{       
-        vector<int> nums = {1, 2, 3, 1};
-        int size = nums.size();
-        if(size == 1)
+{   
+        long k = 1000000000;
+        if(k == 0)
         {
-            return 0;
+            return 5;
         }
-        
-        for(int i = 0; i < size; ++i)
+        long lhs = 0;
+        long rhs = 5*k;
+        int val = -1;
+        while(lhs <= rhs)
         {
-            if(i == 0 && nums[0] > nums[1])
+            size_t mid = (lhs+rhs)/2;
+            size_t zero_num = f(mid);
+            if(zero_num > k)
             {
-                return 0;
+                rhs = mid-1;
             }
-            else if(i == size-1 && nums[i] > nums[i-1])
+            else if(zero_num < k)
             {
-                return i;
+                lhs = mid+1;
             }
-            if(nums[i] > nums[i-1] && nums[i] > nums[i+1])
+            else
             {
-                return i;
+                val = mid;
+                break;
             }
         }
-        return -1;
+        if(val > 0)
+        {
+            return 5;
+        }
+        return 0;
     
 }
