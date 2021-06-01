@@ -20,36 +20,13 @@ long f(long x)
 
 int main()
 {   
-        long k = 1000000000;
-        if(k == 0)
-        {
-            return 5;
-        }
-        long lhs = 0;
-        long rhs = 5*k;
-        int val = -1;
-        while(lhs <= rhs)
-        {
-            size_t mid = (lhs+rhs)/2;
-            size_t zero_num = f(mid);
-            if(zero_num > k)
-            {
-                rhs = mid-1;
-            }
-            else if(zero_num < k)
-            {
-                lhs = mid+1;
-            }
-            else
-            {
-                val = mid;
-                break;
-            }
-        }
-        if(val > 0)
-        {
-            return 5;
-        }
-        return 0;
-    
+    int x = 16;
+    int count = 0;
+    while (x + 1)
+    {
+        count++;
+        x |= (x + 1);
+    }
+    std::cout << count << std::endl;
+    return count;
 }
